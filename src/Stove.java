@@ -29,12 +29,12 @@ public class Stove {
 	 *  
 	 **** You must write the following method ****
 	 */
-	public void displayStove() {
-		for(int i = 0; i < burners.size(); i++) {
-			burners.get(i).display();
+	public void displayStove() { //Displays stove setting
+		for(int i = 0; i < burners.size(); i++) { //Loops through the stove array and 
+			burners.get(i).display(); //calls display() from burner class, which displays burner setting
 		}
-		for(int i = 0; i < burners.size(); i++) {
-			if(burners.get(i).getTemperature() == Burner.Temperature.BLAZING) {
+		for(int i = 0; i < burners.size(); i++) { //Loops through burner array
+			if(burners.get(i).getTemperature() == Burner.Temperature.BLAZING) { //Checks if any temps are blazing, then displays warning
 				System.out.println("RED LIGHT -- HOT BURNER ALERT");
 				break;
 			}
