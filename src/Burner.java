@@ -21,16 +21,36 @@ public class Burner {
 	}
 	
 	public void plusButton() {
-		Setting[] setting = Setting.values();
-		int nextTemp = (mySetting.ordinal()+1) % setting.length;
-		mySetting = setting[nextTemp];
+		switch(mySetting) {
+		case HIGH:
+			break;
+		case MEDIUM:
+			mySetting = Setting.HIGH;
+			break;
+		case LOW: 
+			mySetting = Setting.MEDIUM;
+			break;
+		case OFF:
+			mySetting = Setting.LOW;
+			break;
+		}
 		timer = TIME_DURATION;
 	}
 	
 	public void minusButton() {
-		Setting[] setting = Setting.values();
-		int nextTemp = (mySetting.ordinal()-1) % setting.length;
-		mySetting = setting[nextTemp];
+		switch(mySetting) {
+		case HIGH:
+			mySetting = Setting.MEDIUM;
+			break;
+		case MEDIUM:
+			mySetting = Setting.LOW;
+			break;
+		case LOW: 
+			mySetting = Setting.OFF;
+			break;
+		case OFF:
+			break;
+		}
 		timer = TIME_DURATION;
 	}
 	
@@ -66,6 +86,6 @@ public class Burner {
 	}
 	
 	public void display() {
-		
+		System.out.println(mySetting.toString());
 	}
 }

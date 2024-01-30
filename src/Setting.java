@@ -1,6 +1,6 @@
 
 public enum Setting {
-	OFF ("---"), LOW("--+"), MEDIUM("-++"), HIGH("+++");
+	OFF ("[---].....cooool"), LOW("[--+].....warm"), MEDIUM("[-++].....CAREFUL"), HIGH("[+++].....VERY HOT! DON'T TOUCH");
 	private String Value;
 	
 	Setting(String aValue){
