@@ -60,4 +60,12 @@ public class Burner {
 		
 		
 	}
+	
+	public Temperature getTemperature() {
+		return myTemperature;
+	}
+	
+	public void display() {
+		
+	}
 }
