@@ -9,6 +9,7 @@ Date: 1/29/2024
 Collaborators: N/A
 Sources: N/A
 */
+
 public class Burner {
 	
 	public enum Temperature {
