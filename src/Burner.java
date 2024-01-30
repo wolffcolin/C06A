@@ -1,18 +1,18 @@
 
 public class Burner {
 	
-	public enum Tempurature {
+	public enum Temperature {
 		BLAZING, HOT, WARM, COLD;
 	}
 	
-	private Tempurature myTempurature;
+	private Temperature myTemperature;
 	public Setting mySetting;
 	int timer;
 	public static final int TIME_DURATION = 2;
 	
 	public Burner() {
 		
-		this.myTempurature = Burner.Tempurature.COLD;
+		this.myTemperature = Burner.Temperature.COLD;
 		
 		this.mySetting = Setting.OFF;
 
@@ -21,8 +21,21 @@ public class Burner {
 	}
 	
 	public void plusButton() {
-		
+		Setting[] setting = Setting.values();
+		int nextTemp = (mySetting.ordinal()+1) % setting.length;
+		mySetting = setting[nextTemp];
+		timer = TIME_DURATION;
 	}
 	
+	public void minusButton() {
+		Setting[] setting = Setting.values();
+		int nextTemp = (mySetting.ordinal()-1) % setting.length;
+		mySetting = setting[nextTemp];
+		timer = TIME_DURATION;
+	}
 	
+	public void updateTemperature() {
+		timer--;
+		
+	}
 }
