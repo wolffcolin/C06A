@@ -35,7 +35,29 @@ public class Burner {
 	}
 	
 	public void updateTemperature() {
-		timer--;
+		if (timer > 0) {
+			timer--;
+		}
+		
+		if (timer == 0) {
+			switch (mySetting) {
+			case HIGH:
+				myTemperature = Temperature.BLAZING;
+				break;
+			case MEDIUM:
+				myTemperature = Temperature.HOT;
+				break;
+			case LOW: 
+				myTemperature = Temperature.WARM;
+				break;
+			case OFF:
+				myTemperature = Temperature.COLD;
+				break;
+			}
+			
+			timer = TIME_DURATION;
+		}
+		
 		
 	}
 }
