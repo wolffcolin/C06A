@@ -1,4 +1,14 @@
-
+/*
+ 
+Class: Burner 
+Description: The burner class controls the setting of the burner, the temperature of the burner,
+and the current time. An enum is used to control the temperature of the class, and is controlled using 
+the plusButton() method, the minusButton() method, and the updateTemperature() method. 
+Authors: Colin Wolff and Matt McGrath
+Date: 1/29/2024
+Collaborators: N/A
+Sources: N/A
+*/
 public class Burner {
 	
 	public enum Temperature {
